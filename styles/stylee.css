@@ -18,17 +18,18 @@ body{
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
+/* 
 .inner_box{
     width: 92%;
     height: 79%;
-    flex-shrink: 0;
+    flex-shrink: 0; */
     /* margin-top: 10px; */
 
-    border-radius: 29px;
+    /* border-radius: 29px;
     background: #E9B44C;
-}
+} */
 
-.options{
+/* .options{
     display: flex;
     flex-direction: row;
     
@@ -50,11 +51,77 @@ body{
     background: #50A2A7;
     border-radius: 14px;
     margin-top: 2%;
+} */
+
+.mytabs {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: auto;
+    /* margin: 50px auto; */
+    padding: 25px;
+}
+
+.mytabs input[type="radio"] {
+    display: none;
+}
+
+.mytabs label {
+    padding: 15px 25px;
+    background: #50A2A7;
+    text-align: center;
+    max-width: 100px;
+    width: 100px;
+    border-radius: 14px 14px 0px 0px;
+    cursor: pointer;
+    margin-left: 5px;
+    font-family: Silkscreen;
+    font-size: 16px;
+}
+
+.tab {
+    max-height: 450px; /* Set a fixed or dynamic height */
+    height: 450px;
+    overflow-y: auto; /* Enables vertical scrolling when content overflows */
+    padding-right: 10px; /* Prevents text from touching the scrollbar */
+}
+
+/* Optional: Customize scrollbar for better appearance */
+.tab::-webkit-scrollbar {
+    width: 8px; /* Set scrollbar width */
+}
+
+.tab::-webkit-scrollbar-thumb {
+    background: #50A2A7; /* Scrollbar color */
+    border-radius: 4px;
+}
+
+.tab::-webkit-scrollbar-track {
+    background: #e9b44c; /* Track color */
+}
+
+
+.mytabs .tab {
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px 20px 20px 20px;
+    background: #e9b44c;
+    order: 1;
+    display: none;
+}
+
+.mytabs input[type="radio"]:checked + label + .tab {
+    display: block;
+}
+
+.mytabs input[type="radio"]:checked + label {
+    background: #e9b44c;
+    font-weight: bold;
+    font-size: 15px;
 }
 
 #addTaskBtn{
-    width: 15%;
-    height: 13%; 
+    width: 12%;
+    height: 10%;
 
     /* right: 30%; */
     border-radius: 14px;
@@ -90,17 +157,30 @@ body{
     padding: 15px;        
 }
 
+/* .tasksmade {
+    margin-right: 60%;
+    text-align: left !important;
+} */
+
+/* 
 span.titlee {
     margin-right: 800px;
-}
+} */
 
 input[type="checkbox"] {
-    appearance: none;
-    width: 20px;     
-    height: 20px;
-    border-radius: 4px;
-    background: #888;
+    appearance: unset;
+    width: 30px;
+    height: 30px;
+    border-style: solid;
+    border-radius: 8px;
+    border-color: #3d3d3d;
+    display: block;
     cursor: pointer;
+    transition: background 0.3s;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #50A2A7; /* Slightly darker yellow */
 }
 
 /* In your stylee.css, find your .popup rules and replace them with: */
@@ -140,4 +220,64 @@ input[type="checkbox"] {
 
 #p1, #p2, #p3 {
     margin-bottom: 20px;
+}
+
+.popup p {
+    color: white;
+    font-family: Silkscreen;
+    margin: 10px;
+}
+
+.popup button {
+    background-color: #50A2A7;
+    padding: 10px 20px;
+    border-radius: 14px;
+    border-color: #50A2A7;
+    cursor: pointer;
+}
+
+/* for he edit and delete */
+.settings span {
+    cursor: pointer;
+}
+
+.settings {
+    position: relative;
+}
+
+.settings .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 15px;
+    position: absolute;
+    right: 0;
+    background: black;
+    color: white;
+    bottom: -40px; /* Adjust positioning if needed */
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    
+    /* Hide menu initially */
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Show menu when active */
+.settings .menu.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.settings .menu li {
+    display: flex;
+    /* padding: 5px 0px; Add padding inside each item */
+    align-items: center;
+    justify-content: space-between;
+    justify-content: flex-start;
+    cursor: pointer;
+    list-style: none;
+    height: 25px;
+    color: white;
 }
