@@ -29,10 +29,20 @@ header p{
     margin-left: 2%;
 }
 
-header > span{
+header a {
+    margin-left: 800px;
+    text-decoration: none;
+    display: flex;
+    /* justify-content: center; */
+    color: black;
+    align-items: center;
+    /* text-align: end; */
+}
+
+/* header > span{
     margin-top: 3.5%;
     margin-left: 50%;
-}
+} */
 
 .material-symbols-outlined {
     font-size: 35px;
